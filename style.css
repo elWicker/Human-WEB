@@ -19,7 +19,7 @@ body {
 }
 
 h2, h3 {
-    color: #c0392b; /* Un tono rojo oscuro, bueno para restaurantes */
+    color: #f5230c; /* Un tono rojo oscuro, bueno para restaurantes */
 }
 
 h2 {
@@ -35,7 +35,7 @@ h2 {
     border-bottom: 3px solid #c0392b;
     position: relative;
     width: 100%;
-    padding: 0.5rem 0; /* Reducimos un poco el padding */
+    padding: 0.5rem 0; 
 }
 
 /* Nueva barra de navegación */
@@ -181,6 +181,44 @@ h2 {
     margin-bottom: 15px;
 }
 
+#socio {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  
+}
+
+.formulario {
+  background-color: #ffffff; 
+  padding: 30px; 
+  border-radius: 8px; 
+  box-shadow: 0 23px 23px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; 
+  margin: 0 auto; 
+}
+
+main button {
+  background-color: #ffffff;   
+  color: #333;                 
+  font-weight: bold;
+  padding: 10px 15px;
+  margin-right: 10px;
+  border: 2px solid #ccc;      
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;   
+}
+
+
+main button:hover {
+  background-color:#f4f4f4;   
+  color: #c0392b;              
+}
+
+
+
 /* Footer */
 .main-footer {
     background: #333;
@@ -193,3 +231,5 @@ h2 {
 .main-footer p {
     margin: 5px 0;
 }
+
+

@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentSlide + 1);
     }
 
-    // Función para reiniciar el intervalo de cambio automático
+    // Función que sirve para reiniciar el intervalo automático
     function resetInterval() {
         clearInterval(slideInterval); // Limpia el intervalo anterior
         slideInterval = setInterval(nextSlide, 3000); // Crea uno nuevo
