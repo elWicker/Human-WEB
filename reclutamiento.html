@@ -27,25 +27,84 @@
 
         <section id="entrevista" class="container">
             <h2>UNETE AL EQUIPO</h2>
-            <p>Si estás interesado en unirte a nuestro grupo restaurantero 
-            como socio, por favor contáctanos para más información sobre los beneficios y requisitos.</p>
+            <p>Si estás interesado en unirte a nuestro grupo restaurantero <br>
+            como empleado, por favor contáctanos para más información sobre los beneficios y requisitos.</p>
                 <div class="formulario" >
 
                     <form action="#" method="post">
                         <label for="nombre">Nombre Completo:</label><br>
-                        <input type="text" id="nombre" name="nombre" required><br><br>
+                        <input type="text" id="nombre" name="nombre" required><br>
+
+                        <label for="puesto">Puesto al que Aspiras:</label><br>
+                        <select id="puesto" name="puesto" required>
+                            <option value="cocinero">Cocinero</option>
+                            <option value="mesero">Mesero</option>
+                            <option value="gerente">Gerente</option>
+                            <option value="runner">Runner</option>
+                            <option value="otro">Hostess</option>
+                        </select><br>
+
+                        <label for="Marca">Marca:</label><br>
+                        <select id="marca" name="marca" required>
+                            <option value="canta">Canta Corazon</option>
+                            <option value="casamia">Casa Mia</option>
+                            <option value="NotABank">NotABank</option>
+                            <option value="aster">Asteroysters</option>
+                            <option value="normall">Normall</option>
+                            <option value="otro">Otro</option>
+                        </select><br>
+
+                        <label for="estado">Estado:</label><br>
+                            <select id="estado" name="estado" required>
+                            <option value="">-- Selecciona un estado --</option>
+                            </select><br>       
 
                         <label for="email">Correo Electrónico:</label><br>
-                        <input type="email" id="email" name="email" required><br><br>
+                        <input type="email" id="email" name="email" required><br>
 
                         <label for="mensaje">Mensaje:</label><br>
-                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br>
 
                         <button type="submit">Enviar</button><br>
                     </form>
 
                 </div>
         </section>
+
+
+  <script> // Script para llenar el select de estados según la marca seleccionada  
+  const marcaSelect = document.getElementById('marca');
+  const estadoSelect = document.getElementById('estado');
+
+  // Diccionario con los estados según la marca
+  const estadosPorMarca = {
+    canta: ['Guanajuato', 'Querétaro',  'CDMX', 'Leon', 'AGS'],
+    casamia: ['Leon'],
+    NotABank: ['AGS', 'Queretaro'],
+    aster: ['Leon'],
+    normall: ['Leon', 'Puebla', 'Metepec', 'Monterrey']
+  };
+
+  marcaSelect.addEventListener('change', function() {
+    const marcaSeleccionada = marcaSelect.value;
+    const estados = estadosPorMarca[marcaSeleccionada] || [];
+
+    // Limpiar las opciones anteriores
+    estadoSelect.innerHTML = '<option value="">-- Selecciona un estado --</option>';
+
+    // Llenar las nuevas opciones
+    estados.forEach(estado => {
+      const opcion = document.createElement('option');
+      opcion.value = estado.toLowerCase();
+      opcion.textContent = estado;
+      estadoSelect.appendChild(opcion);
+    });
+  });
+</script>
+
+
+
+
 
 
     </main>

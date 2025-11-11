@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para mostrar una diapositiva específica
     function showSlide(index) {
+        // Si no hay diapositivas, no hacer nada
+        if (slides.length === 0) return;
+
         // Oculta la diapositiva actual
         slides[currentSlide].classList.remove('active-slide');
 
@@ -29,16 +32,23 @@ document.addEventListener('DOMContentLoaded', () => {
         slideInterval = setInterval(nextSlide, 3000); // Crea uno nuevo
     }
 
-    // Event Listeners para los botones
-    nextButton.addEventListener('click', () => {
-        nextSlide();
-        resetInterval();
-    });
+    // Event Listeners para los botones (con protecciones si no existen)
+    if (nextButton) {
+        nextButton.addEventListener('click', () => {
+            nextSlide();
+            resetInterval();
+        });
+    }
 
-    prevButton.addEventListener('click', () => {
-        showSlide(currentSlide - 1);
-        resetInterval();
-        });      
-    
+    if (prevButton) {
+        prevButton.addEventListener('click', () => {
+            showSlide(currentSlide - 1);
+            resetInterval();
+        });
+    }
+
+    // Inicia el carrusel automáticamente
+    resetInterval();
+
     });
     
